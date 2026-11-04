@@ -83,3 +83,9 @@ test("focusByTask groups and sorts by minutes", () => {
 test("pausesByReason totals per reason", () => {
   assert.deepEqual(S.pausesByReason(sessions), { incident: { count: 1, minutes: 12 } });
 });
+
+test("logFile says which roll comes next when idle", () => {
+  assert.equal(S.logFile(sessions, { status: "idle", phase: "break" }, now).next, "break");
+  const running = { status: "running", phase: "focus", roll: 3, plannedMin: 6, startedAt: now.getTime(), endsAt: now.getTime() + 6 * 60e3 };
+  assert.equal(S.logFile(sessions, running, now).next, null);
+});

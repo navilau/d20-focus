@@ -40,6 +40,24 @@ Then, in any Claude Code session:
 
 The skill runs `cli/focus-stats.js`, which you can also run on its own: `node cli/focus-stats.js [range] [--json]`.
 
+## Status line in Claude Code
+Shows the timer at the bottom of Claude Code:
+
+```
+🎲 14 · Focus · Write project proposal · 23m left · today 1h 05m
+```
+
+Add this to `~/.claude/settings.json`:
+```json
+"statusLine": {
+  "type": "command",
+  "command": "node /path/to/d20-focus/cli/statusline.js"
+}
+```
+If you already have a status line script, add `--chain <that script>`. The script gets Claude Code's input first, and its output is shown above the D20 line.
+
+Claude Code redraws the status line when the session changes, not every second, so "23m left" is as of the last redraw. The extension updates `log.json` when the timer starts, pauses, resumes or ends.
+
 ## Develop
 ```
 npm test     # Node 18+, no dependencies

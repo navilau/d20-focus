@@ -27,11 +27,21 @@ function update(fn) {
     await appendSessions(sessions);
     await saveState(state);
     await syncChrome(state);
-    if (sessions.length) writeLogFile(state).catch((e) => console.warn("log.json:", e));
+    if (shouldWriteLog(before, state, sessions)) writeLogFile(state).catch((e) => console.warn("log.json:", e));
     return { state, sessions };
   });
   queue = run.catch(() => {});
   return run;
+}
+
+// log.json is rewritten when a session is logged, and whenever the timer
+// starts, pauses, resumes, stops or is extended, so Claude Code's status line
+// can show what's running. Rolling and typing a task don't trigger a save.
+const ACTIVE = ["running", "paused"];
+function shouldWriteLog(before, after, sessions) {
+  if (sessions.length) return true;
+  const timerChanged = before.status !== after.status || before.endsAt !== after.endsAt;
+  return timerChanged && (ACTIVE.includes(before.status) || ACTIVE.includes(after.status));
 }
 
 const actions = {
