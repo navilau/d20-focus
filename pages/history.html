@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>D20 Focus · History</title>
+  <link rel="icon" href="../assets/icon-32.png">
+  <link rel="stylesheet" href="history.css">
+</head>
+<body>
+  <header class="top">
+    <h1>D20 Focus history</h1>
+    <div class="tools">
+      <button id="csvBtn">Export CSV</button>
+      <button id="jsonBtn">Export JSON</button>
+      <label class="button">Import JSON<input id="importInput" type="file" accept="application/json,.json" hidden></label>
+    </div>
+  </header>
+  <p class="status" id="status" role="status"></p>
+
+  <section class="tiles" id="tiles" aria-label="Totals"></section>
+
+  <section class="card">
+    <h2>Focus minutes per day <span class="sub">last 14 days</span></h2>
+    <div class="chart" id="dayChart"></div>
+  </section>
+
+  <section class="card">
+    <h2>Rolls <span class="sub">how often each face has come up, re-rolls included</span></h2>
+    <div class="chart" id="rollChart"></div>
+  </section>
+
+  <section class="card">
+    <h2>Sessions</h2>
+    <div class="filters" role="group" aria-label="Filter sessions">
+      <button data-filter="all" aria-pressed="true">All</button>
+      <button data-filter="focus" aria-pressed="false">Focus</button>
+      <button data-filter="break" aria-pressed="false">Breaks</button>
+      <button data-filter="pause" aria-pressed="false">Pauses</button>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Date</th><th>Start</th><th>Type</th><th>Task / reason</th><th class="num">Roll</th><th class="num">Planned</th><th class="num">Actual</th><th>Status</th></tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+    <button id="moreBtn" class="link" hidden>Show all</button>
+    <p class="empty" id="empty" hidden>No sessions yet. Roll for focus to get started.</p>
+  </section>
+
+  <script type="module" src="history.js"></script>
+</body>
+</html>

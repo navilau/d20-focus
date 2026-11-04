@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>D20 Focus</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body data-phase="focus" data-status="idle">
+  <header>
+    <span class="phase-label" id="phaseLabel">Next: Focus</span>
+  </header>
+
+  <main>
+    <label class="task" id="taskRow">
+      <span>Working on (optional)</span>
+      <input id="task" type="text" maxlength="120" placeholder="e.g. Write project proposal">
+    </label>
+    <p class="task-show" id="taskShow"></p>
+
+    <div class="die-wrap">
+      <svg class="die" id="die" viewBox="0 0 100 100" role="img" aria-label="d20">
+        <polygon class="face" points="50,4 90,27 90,73 50,96 10,73 10,27"/>
+        <g class="edges">
+          <polygon points="50,22 78,66 22,66"/>
+          <path d="M50,22 L50,4 M50,22 L10,27 M50,22 L90,27
+                   M78,66 L90,27 M78,66 L90,73 M78,66 L50,96
+                   M22,66 L10,27 M22,66 L10,73 M22,66 L50,96"/>
+        </g>
+        <text id="dieNum" x="50" y="55" text-anchor="middle" dominant-baseline="middle">20</text>
+      </svg>
+    </div>
+
+    <p class="countdown" id="countdown"></p>
+    <p class="result" id="result" aria-live="polite"></p>
+    <p class="crit" id="crit" aria-live="polite"></p>
+
+    <div class="actions" data-show="idle">
+      <button id="rollBtn" class="primary">Roll for Focus</button>
+    </div>
+    <div class="actions" data-show="reroll">
+      <button id="rerollBtn" class="primary">Re-roll</button>
+      <button id="keepBtn">Keep</button>
+    </div>
+    <div class="actions" data-show="rolled">
+      <button id="startBtn" class="primary">Start</button>
+    </div>
+    <div class="actions" data-show="running">
+      <button id="extendBtn" class="primary">+10 min</button>
+      <button id="pauseBtn">Pause</button>
+      <button id="stopBtn">Stop</button>
+    </div>
+    <div class="actions" data-show="pickReason">
+      <p class="reason-q">Pause for…</p>
+      <button data-reason="meeting">Meeting</button>
+      <button data-reason="incident">Incident</button>
+      <button data-reason="call">Call</button>
+      <button data-reason="other">Other</button>
+      <button id="cancelPause" class="link">Cancel</button>
+    </div>
+    <div class="actions" data-show="paused">
+      <button id="resumeBtn" class="primary">Resume</button>
+      <button id="stopBtn2">Stop</button>
+      <button id="skipBtn">Skip rest of break</button>
+    </div>
+
+    <p class="error" id="error" role="alert"></p>
+
+    <footer>
+      <button id="historyBtn" class="link">History</button>
+      <button id="downloadBtn" class="link">Download log</button>
+      <button id="settingsBtn" class="link">Settings</button>
+    </footer>
+    <p class="saved" id="saved" aria-live="polite"></p>
+  </main>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

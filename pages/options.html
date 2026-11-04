@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>D20 Focus · Settings</title>
+  <link rel="icon" href="../assets/icon-32.png">
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <h1>D20 Focus settings</h1>
+  <p class="lead">Changes save as you make them. They apply from your next Start; a block that's already running keeps its rules.</p>
+
+  <form id="form" novalidate>
+    <section class="card">
+      <h2>Durations</h2>
+
+      <div class="field">
+        <label for="focusMultiplier">Focus length</label>
+        <div class="row">
+          <span>roll ×</span>
+          <input id="focusMultiplier" name="focusMultiplier" type="number" min="1" max="3" step="0.5" inputmode="decimal">
+          <span>minutes</span>
+        </div>
+        <p class="hint" id="focusHint"></p>
+      </div>
+
+      <div class="field">
+        <label for="longBreakEvery">Long break</label>
+        <div class="row">
+          <span>every</span>
+          <input id="longBreakEvery" name="longBreakEvery" type="number" min="0" max="10" step="1" inputmode="numeric">
+          <span>breaks</span>
+        </div>
+        <p class="hint">A long break lasts as many minutes as you roll (1–20). Set to 0 to turn long breaks off.</p>
+      </div>
+
+      <div class="field">
+        <span class="label">Short breaks</span>
+        <p class="hint">Roll 2–4: 3 min · 5–8: 4 min · 9–12: 5 min · 13–16: 6 min · 17–19: 7 min.</p>
+      </div>
+
+      <div class="field check">
+        <input id="crits" name="crits" type="checkbox">
+        <label for="crits">Critical rolls</label>
+        <p class="hint">Natural 20 on focus lets you extend by 10 min once. Natural 20 on a break gives 20 min; natural 1 gives 1 min. When off, 1 and 20 follow the normal rules. Re-rolling a 1 is always allowed.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Sound</h2>
+      <div class="field check">
+        <input id="sound" name="sound" type="checkbox">
+        <label for="sound">Play a chime when a focus block or break ends</label>
+      </div>
+      <div class="field">
+        <label for="volume">Volume</label>
+        <div class="row">
+          <input id="volume" name="volume" type="range" min="0" max="1" step="0.05">
+          <button type="button" id="testFocus">Test focus end</button>
+          <button type="button" id="testBreak">Test break end</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Never block these sites</h2>
+      <p class="hint">The break screen never covers these sites or their subdomains. One per line. Pasting a full link works too.</p>
+      <textarea id="allowList" name="allowList" rows="6" spellcheck="false"></textarea>
+      <p class="hint">Claude stays usable during breaks only while <code>claude.ai</code> is on this list.</p>
+    </section>
+  </form>
+
+  <p class="saved" id="saved" role="status"></p>
+
+  <script type="module" src="options.js"></script>
+</body>
+</html>

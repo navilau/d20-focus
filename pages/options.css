@@ -1,0 +1,45 @@
+:root {
+  --bg: #f7f6fb; --surface: #ffffff; --text: #1d1b26; --muted: #6b6880;
+  --border: #dcd9e8; --focus: #6d4aff; --ok: #0e7a6d;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #15141c; --surface: #1f1d29; --text: #ece9f7; --muted: #9c98b3;
+    --border: #34314a; --focus: #8f74ff; --ok: #22c3ae;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0 auto; max-width: 640px; padding: 24px 16px 48px;
+  font: 14px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--bg); color: var(--text);
+}
+h1 { font-size: 22px; margin: 0 0 4px; }
+h2 { font-size: 15px; margin: 0 0 12px; }
+.lead { color: var(--muted); margin: 0 0 16px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px; margin-bottom: 16px; }
+.field { margin-bottom: 14px; }
+.field:last-child { margin-bottom: 0; }
+label, .label { font-weight: 600; display: block; margin-bottom: 4px; }
+.row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.hint { color: var(--muted); font-size: 13px; margin: 4px 0 0; }
+.check { display: grid; grid-template-columns: auto 1fr; column-gap: 8px; align-items: center; }
+.check label { margin: 0; }
+.check .hint { grid-column: 2; }
+input[type="number"] {
+  width: 72px; font: inherit; padding: 6px 8px; border-radius: 8px;
+  border: 1px solid var(--border); background: var(--bg); color: var(--text);
+}
+input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--focus); margin: 0; }
+input[type="range"] { accent-color: var(--focus); flex: 1; min-width: 120px; }
+textarea {
+  width: 100%; margin-top: 8px; font: 13px/1.5 ui-monospace, "SF Mono", Menlo, monospace;
+  padding: 8px 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); color: var(--text);
+}
+input:focus-visible, textarea:focus-visible, button:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
+button {
+  font: inherit; font-weight: 600; font-size: 13px; padding: 6px 10px; border-radius: 8px; cursor: pointer;
+  border: 1px solid var(--border); background: var(--surface); color: var(--text);
+}
+code { font-size: 12px; }
+.saved { position: sticky; bottom: 12px; color: var(--ok); font-weight: 600; min-height: 20px; margin: 0; }
