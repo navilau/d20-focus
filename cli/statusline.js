@@ -11,8 +11,8 @@
 // is passed to another status line script first (for example Orca's), and
 // its output, if any, is printed before ours. That way both keep working.
 //
-// Claude Code redraws the status line when the session changes, not every
-// second, so "23m left" is as of the last redraw.
+// Set "refreshInterval": 15 on the statusLine setting so Claude Code re-runs
+// this while idle; otherwise it only redraws when the session changes.
 
 import { readFileSync } from "node:fs";
 import { spawnSync } from "node:child_process";

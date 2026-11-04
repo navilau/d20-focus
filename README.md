@@ -53,12 +53,13 @@ Add this to `~/.claude/settings.json`:
 ```json
 "statusLine": {
   "type": "command",
-  "command": "node /path/to/d20-focus/cli/statusline.js"
+  "command": "node /path/to/d20-focus/cli/statusline.js",
+  "refreshInterval": 15
 }
 ```
 If you already have a status line script, add `--chain <that script>`. The script gets Claude Code's input first, and its output is shown above the D20 line.
 
-Claude Code redraws the status line when the session changes, not every second, so "23m left" is as of the last redraw. The extension updates `log.json` when the timer starts, pauses, resumes or ends.
+`refreshInterval` makes Claude Code re-run the script every 15 seconds, so the countdown keeps moving while Claude is idle. Without it, the line only updates when something happens in the session. The extension updates `log.json` when the timer starts, pauses, resumes or ends.
 
 ## Develop
 ```
