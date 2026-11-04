@@ -41,11 +41,13 @@ Then, in any Claude Code session:
 The skill runs `cli/focus-stats.js`, which you can also run on its own: `node cli/focus-stats.js [range] [--json]`.
 
 ## Status line in Claude Code
-Shows the timer at the bottom of Claude Code:
+Shows the timer at the bottom of Claude Code, with the project that Claude session is in:
 
 ```
-🎲 14 · Focus · Write project proposal · 23m left · today 1h 05m
+🎲 14 · Focus · 23m left · in d20-focus · today 1h 05m
 ```
+
+It shows the Claude project, not the task you typed in Chrome, because you may be working on something different in each.
 
 Add this to `~/.claude/settings.json`:
 ```json

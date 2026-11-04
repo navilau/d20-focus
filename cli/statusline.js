@@ -4,7 +4,8 @@
 //   node cli/statusline.js [--chain <script>] [--file <log.json>]
 //
 // Prints one line, such as:
-//   🎲 14 · Focus · Write project proposal · 23m left · today 1h 05m
+//   🎲 14 · Focus · 23m left · in d20-focus · today 1h 05m
+// "in d20-focus" is this Claude Code session's project folder.
 //
 // Claude Code sends session info as JSON on stdin. With --chain, that input
 // is passed to another status line script first (for example Orca's), and
@@ -16,7 +17,7 @@
 import { readFileSync } from "node:fs";
 import { spawnSync } from "node:child_process";
 import { homedir } from "node:os";
-import { join } from "node:path";
+import { basename, join } from "node:path";
 import { summary } from "../lib/stats.js";
 
 const args = process.argv.slice(2);
@@ -57,6 +58,19 @@ const hm = (min) => {
 };
 const short = (s, n = 32) => (s.length > n ? `${s.slice(0, n - 1)}…` : s);
 
+// The Claude Code session's project, from the JSON Claude Code sends on
+// stdin. Shown in place of the Chrome task, because you may be working on
+// something different here. Nothing is shown for the home folder.
+function claudeProject() {
+  let info;
+  try { info = JSON.parse(input); } catch { return ""; }
+  const dir = info?.workspace?.project_dir || info?.workspace?.current_dir || info?.cwd;
+  if (!dir || dir.replace(/\/+$/, "") === homedir()) return "";
+  return basename(dir.replace(/\/+$/, ""));
+}
+const project = claudeProject();
+const where = project ? C.dim(` · in ${short(project, 28)}`) : "";
+
 function d20Line() {
   let log;
   try {
@@ -73,20 +87,19 @@ function d20Line() {
   if (c) {
     const paint = C[c.type] ?? ((s) => s);
     const label = paint(c.type === "focus" ? "Focus" : "Break");
-    const task = c.type === "focus" && c.task ? ` · ${short(c.task)}` : "";
     if (c.status === "paused") {
-      return `⏸  ${label}${task} · ${C.warn(`paused (${c.pauseReason || "meeting"})`)} · ${todayText}`;
+      return `⏸  ${label} · ${C.warn(`paused (${c.pauseReason || "meeting"})`)}${where} · ${todayText}`;
     }
     const leftMin = (new Date(c.endsAt).getTime() - now) / 60000;
     if (leftMin <= 0) {
       const next = c.type === "focus" ? "break" : "focus";
-      return `🎲 ${label} time's up · roll for ${next} · ${todayText}`;
+      return `🎲 ${label} time's up · roll for ${next}${where} · ${todayText}`;
     }
-    return `🎲 ${c.roll} · ${label}${task} · ${hm(Math.ceil(leftMin))} left · ${todayText}`;
+    return `🎲 ${c.roll} · ${label} · ${hm(Math.ceil(leftMin))} left${where} · ${todayText}`;
   }
 
-  if (log.next) return `🎲 Ready to roll for ${C[log.next]?.(log.next) ?? log.next} · ${todayText}`;
-  return `🎲 D20 Focus · ${todayText}`;
+  if (log.next) return `🎲 Ready to roll for ${C[log.next]?.(log.next) ?? log.next}${where} · ${todayText}`;
+  return `🎲 D20 Focus${where} · ${todayText}`;
 }
 
 const mine = d20Line();
