@@ -77,3 +77,6 @@ npm test     # Node 18+, no dependencies
 | `content/overlay.js` | Break screen injected into web pages |
 | `popup/` | Toolbar popup |
 | `pages/` | History, settings, fallback break tab and offscreen audio page |
+
+## License
+MIT. See [LICENSE](LICENSE).
