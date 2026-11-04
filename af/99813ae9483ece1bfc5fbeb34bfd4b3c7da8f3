@@ -1,0 +1,73 @@
+.gitignore
+  s_bc413dc1c6d0ee::t_8d4d39f8455dee 1-6
+PLAN.md
+  s_bc413dc1c6d0ee::t_8d4d39f8455dee 1-153
+README.md
+  s_bc413dc1c6d0ee::t_ffeab36276bc00 1-44
+background.js
+  s_bc413dc1c6d0ee::t_53a5e549dca12a 1-228
+content/overlay.js
+  s_bc413dc1c6d0ee::t_ef3f7867ebb436 1-160
+lib/dice.js
+  s_bc413dc1c6d0ee::t_0a41c2bc65c171 1-64
+lib/settings.js
+  s_bc413dc1c6d0ee::t_b27c1b235422d9 1-65
+lib/stats.js
+  s_bc413dc1c6d0ee::t_b39bad52b537e5 1-129
+lib/store.js
+  s_bc413dc1c6d0ee::t_8d4d5c07661dc7 1-27
+lib/timer.js
+  s_bc413dc1c6d0ee::t_96d80dc9959e12 1-191
+manifest.json
+  s_bc413dc1c6d0ee::t_707b013a606e0c 1-39
+package.json
+  s_bc413dc1c6d0ee::t_a2be5c2c0b96a1 1-8
+pages/break.html
+  s_bc413dc1c6d0ee::t_90d98c95182d41 1-11
+pages/history.css
+  s_bc413dc1c6d0ee::t_c2e6e30d2e3ba3 1-90
+pages/history.html
+  s_bc413dc1c6d0ee::t_2ec68dbc0c7dcc 1-55
+pages/history.js
+  s_bc413dc1c6d0ee::t_b1a41ee91a2d18 1-213
+pages/offscreen.html
+  s_bc413dc1c6d0ee::t_5555afd18390e7 1-4
+pages/offscreen.js
+  s_bc413dc1c6d0ee::t_3b00af23aeab65 1-33
+pages/options.css
+  s_bc413dc1c6d0ee::t_47983ce10b68f8 1-45
+pages/options.html
+  s_bc413dc1c6d0ee::t_bf0221d0dd9e7d 1-78
+pages/options.js
+  s_bc413dc1c6d0ee::t_aff4d984b06321 1-47
+popup/popup.css
+  s_bc413dc1c6d0ee::t_4fbdf8d5ba7735 1-135
+popup/popup.html
+  s_bc413dc1c6d0ee::t_9c6cf9e47e2620 1-78
+popup/popup.js
+  s_bc413dc1c6d0ee::t_cc10ef6759b42f 1-202
+tests/dice.test.js
+  s_bc413dc1c6d0ee::t_e152c0d4b47623 1-83
+tests/settings.test.js
+  s_bc413dc1c6d0ee::t_848250ee263e4d 1-36
+tests/stats.test.js
+  s_bc413dc1c6d0ee::t_96ce35c3376e80 1-72
+tests/timer.test.js
+  s_bc413dc1c6d0ee::t_d35d04c792efcc 1-194
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "af99813ae9483ece1bfc5fbeb34bfd4b3c7da8f3",
+  "prompts": {},
+  "sessions": {
+    "s_bc413dc1c6d0ee": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8b7e1c67-3a99-451c-8ae8-b0617352f056",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Navila Islam <navilau@nulogy.com>"
+    }
+  }
+}
