@@ -1,0 +1,19 @@
+README.md
+  s_bc413dc1c6d0ee::t_d48cfc0a510568 5-6
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "339a9731926d238c1480c5f8b7762dbbe8a6c5dc",
+  "prompts": {},
+  "sessions": {
+    "s_bc413dc1c6d0ee": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8b7e1c67-3a99-451c-8ae8-b0617352f056",
+        "model": "unknown"
+      },
+      "human_author": "Navila Islam <navilau@nulogy.com>"
+    }
+  }
+}
