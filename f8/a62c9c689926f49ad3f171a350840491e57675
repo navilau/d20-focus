@@ -1,0 +1,77 @@
+.gitignore
+  s_bc413dc1c6d0ee::t_9c11c51fbcc19b 1-6
+PLAN.md
+  s_bc413dc1c6d0ee::t_c040b0a5170b88 1-153
+background.js
+  s_bc413dc1c6d0ee::t_13b17da598a529 1-228
+content/overlay.js
+  s_bc413dc1c6d0ee::t_d796fcc5711929 1-160
+lib/dice.js
+  s_bc413dc1c6d0ee::t_f76157dd840ffa 1-64
+lib/settings.js
+  s_bc413dc1c6d0ee::t_352e1078ebb13a 1-65
+lib/stats.js
+  s_bc413dc1c6d0ee::t_ae9e76053b9562 1-157
+lib/store.js
+  s_bc413dc1c6d0ee::t_3d6f61cadc06cc 1-27
+lib/timer.js
+  s_bc413dc1c6d0ee::t_4c5c9d34108267 1-191
+manifest.json
+  s_bc413dc1c6d0ee::t_e51b1fe917b9c1 1-39
+package.json
+  s_bc413dc1c6d0ee::t_01fb3003ec10a8 1-8
+pages/break.html
+  s_bc413dc1c6d0ee::t_c6d2baefad5d93 1-11
+pages/history.css
+  s_bc413dc1c6d0ee::t_28d86dc4af6599 1-90
+pages/history.html
+  s_bc413dc1c6d0ee::t_4b56803e7690ff 1-55
+pages/history.js
+  s_bc413dc1c6d0ee::t_18519c5a7f7b3a 1-213
+pages/offscreen.html
+  s_bc413dc1c6d0ee::t_3a12db9f53cc08 1-4
+pages/offscreen.js
+  s_bc413dc1c6d0ee::t_cb7a45b664c24d 1-33
+pages/options.css
+  s_bc413dc1c6d0ee::t_5db246da662c70 1-45
+pages/options.html
+  s_bc413dc1c6d0ee::t_333d40c5311d8e 1-78
+pages/options.js
+  s_bc413dc1c6d0ee::t_63dfff38d52be6 1-47
+popup/popup.css
+  s_bc413dc1c6d0ee::t_9dab399bbe490b 1-135
+popup/popup.html
+  s_bc413dc1c6d0ee::t_64f21cc06a9b62 1-78
+popup/popup.js
+  s_bc413dc1c6d0ee::t_c7a165e79bb8b6 1-202
+tests/dice.test.js
+  s_bc413dc1c6d0ee::t_0a36e01ccbed3b 1-83
+tests/settings.test.js
+  s_bc413dc1c6d0ee::t_047cd503db20f2 1-36
+tests/stats.test.js
+  s_bc413dc1c6d0ee::t_1a4606381f9f4e 1-85
+tests/timer.test.js
+  s_bc413dc1c6d0ee::t_f48069d3039ecb 1-194
+README.md
+  s_bc413dc1c6d0ee::t_68422f7b34f689 1-58
+claude/skills/focus-stats/SKILL.md
+  s_bc413dc1c6d0ee::t_3e31189c645d4a 1-22
+cli/focus-stats.js
+  s_bc413dc1c6d0ee::t_95e32a5e14f705 1-165
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f8a62c9c689926f49ad3f171a350840491e57675",
+  "prompts": {},
+  "sessions": {
+    "s_bc413dc1c6d0ee": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8b7e1c67-3a99-451c-8ae8-b0617352f056",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Navila Islam <18558840+navilau@users.noreply.github.com>"
+    }
+  }
+}
