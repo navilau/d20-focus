@@ -1,0 +1,22 @@
+cli/statusline.js
+  s_bc413dc1c6d0ee::t_5f856c98f81339 7-8,20,91,96,98,101-102
+  s_bc413dc1c6d0ee::t_8cbf238585ea0f 61-73
+README.md
+  s_bc413dc1c6d0ee::t_e888ae674b624b 44,47,50-51
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "da443f14b1046a961cf5ed42d14dc72fa2114719",
+  "prompts": {},
+  "sessions": {
+    "s_bc413dc1c6d0ee": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8b7e1c67-3a99-451c-8ae8-b0617352f056",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Navila Islam <18558840+navilau@users.noreply.github.com>"
+    }
+  }
+}
